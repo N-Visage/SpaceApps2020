@@ -71,6 +71,7 @@ body { margin: 0; padding: 0; }
 
     color: white;
     font-family: "Bebas Neue";
+    transition: all 0.2s;
 }
 
 .filter .click-icon {
@@ -86,7 +87,6 @@ body { margin: 0; padding: 0; }
     background-color: #323232;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
-    transition: all 0.2s;
 }
 
 .filter .click-icon .material-icons {
