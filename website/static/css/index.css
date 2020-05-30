@@ -65,8 +65,8 @@ body { margin: 0; padding: 0; }
     position: fixed;
 
     margin: 0%;
-    margin-top: 10%;
-    margin-left: 10%;
+    margin-top: 7%;
+    margin-left: 88.5%;
     padding: 0;
 
     color: white;
@@ -84,6 +84,9 @@ body { margin: 0; padding: 0; }
     text-align: center;
     vertical-align: top;
     background-color: #323232;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
 .filter .click-icon .material-icons {
@@ -97,11 +100,14 @@ body { margin: 0; padding: 0; }
     margin: 0 0;
     padding: 4% 3%;
     vertical-align: top;
+    border-radius: 0 0 0 4px;
     font-family: "Ubuntu";
     color: white;
     text-align: center;
     font-size: 110%;
     background-color: #323232;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all 0.2s;
 }
 
 .filter form p  {
@@ -114,6 +120,8 @@ body { margin: 0; padding: 0; }
 
     margin: 0% 0% 0% 5%;
     padding: 4%;
+    font-size: 100%;
+    font-family: "Ubuntu";
 
     border: none;
     color: white;
@@ -125,3 +133,31 @@ body { margin: 0; padding: 0; }
     vertical-align: middle;
     font-size: 200%;
 }
+
+.filter form button {
+    display: block;
+    width: 58%;
+    padding: 4%;
+    font-size: 100%;
+    margin: 0 0 0 28%;
+
+    font-family: "Bebas Neue";
+    font-size: 120%;
+    letter-spacing: 3px;
+    border: none;
+    color: white;
+    background-color: #404040;
+    cursor: pointer;
+}
+
+::-webkit-input-placeholder { /* Edge */
+    color: white;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer */
+    color: white;
+  }
+  
+  ::placeholder {
+    color: white;
+  }

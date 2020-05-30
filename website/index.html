@@ -27,9 +27,12 @@
         <div class="filter">
             <p class="click-icon">Search By Area&nbsp;&nbsp;<span class="material-icons">filter_list</span></p><form>
             <!-- <form> -->
-                <p>Click on the map to select a place.</p><br>
-                <span class="material-icons">opacity</span><input type="number" class="input"><br><br>
-                <span class="material-icons">ac_unit</span><input type="number" class="input">
+                <p>Click on the map to select a place.<br><br>You can even play around with the values to see interesting results!</p><br>
+                <span class="material-icons">opacity</span><input type="number" class="input" placeholder="Precipitation"><br><br>
+                <span class="material-icons">ac_unit</span><input type="number" class="input" placeholder="Temperature"><br><br>
+                <span class="material-icons">nature</span><input type="number" class="input" min="-1" max="1"  placeholder="NDVI"><br><br><br>
+                <button type="submit" style="background-color: green;">Predict</button><br>
+                <button type="submit" style="background-color: red;">Clear</button><br>
             </form>
         </div>
 
