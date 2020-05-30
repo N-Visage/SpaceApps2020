@@ -1,0 +1,127 @@
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+/* INDEX.HTML */
+
+.page-body {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    background-color: black;
+}
+
+.page-body nav {
+    display: block;
+    position: fixed;
+    width: 100%;
+
+    margin: 0;
+    padding: 0.50% 0%;
+    top: 0;
+    left: 0;
+
+    background-color: #323232;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 100;
+
+    font-family: "Bebas Neue";
+}
+
+.page-body nav a {
+    display: inline-block;
+    margin: 0% 0.5%;
+    padding: 0.3% 1.5%;
+
+    border-radius: 3px;
+    font-size: 150%;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: 4px;
+
+    vertical-align: middle;
+}
+
+.page-body nav a:hover { background-color: #404040; }
+
+.page-body nav .logo {
+    display: inline-block;
+    width: 20%;
+    margin-right: 35%;
+}
+
+.page-body nav .logo:hover { background-color: #323232; }
+
+.page-body nav .logo img {
+    display: block;
+    width: 100%;
+}
+
+.filter {
+    display: block;
+    width: 36%;
+    position: fixed;
+
+    margin: 0%;
+    margin-top: 10%;
+    margin-left: 10%;
+    padding: 0;
+
+    color: white;
+    font-family: "Bebas Neue";
+}
+
+.filter .click-icon {
+    display: inline-block;
+    width: 33%;
+    margin: 0;
+    padding: 3% 0%;
+    font-size: 130%;
+    border-radius: 6px 0px 0px 6px;
+    letter-spacing: 2px;
+    text-align: center;
+    vertical-align: top;
+    background-color: #323232;
+}
+
+.filter .click-icon .material-icons {
+    font-size: 120%;
+    vertical-align: middle;
+}
+
+.filter form {
+    display: inline-block;
+    width: 60%;
+    margin: 0 0;
+    padding: 4% 3%;
+    vertical-align: top;
+    font-family: "Ubuntu";
+    color: white;
+    text-align: center;
+    font-size: 110%;
+    background-color: #323232;
+}
+
+.filter form p  {
+    text-align: center;
+}
+
+.filter form input {
+    display: inline-block;
+    width: 50%;
+
+    margin: 0% 0% 0% 5%;
+    padding: 4%;
+
+    border: none;
+    color: white;
+    background-color: #606060;
+}
+
+.filter form .material-icons {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 200%;
+}

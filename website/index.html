@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>N-Visage</title>
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+        <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js"></script>
+        <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css" rel="stylesheet" />
+        <link href="static/css/index.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ubuntu&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+
+    <body>
+    <!-- <div id="map"></div> -->
+
+    <div class="page-body">
+
+        <nav>
+            <a href="#" class="logo"><img src="static/img/logo.png"></a>
+            <a link href="#">ABOUT</a>
+            <a link href="#">HOW IT WORKS</a>
+            <a link href="#">TEAM</a>
+            <a link href="#">SOCIAL</a>
+        </nav>
+
+        <div class="filter">
+            <p class="click-icon">Search By Area&nbsp;&nbsp;<span class="material-icons">filter_list</span></p><form>
+            <!-- <form> -->
+                <p>Click on the map to select a place.</p><br>
+                <span class="material-icons">opacity</span><input type="number" class="input"><br><br>
+                <span class="material-icons">ac_unit</span><input type="number" class="input">
+            </form>
+        </div>
+
+    </div>
+
+    </body>
+
+    <script>
+        // TO MAKE THE MAP APPEAR YOU MUST
+        // ADD YOUR ACCESS TOKEN FROM
+        // https://account.mapbox.com
+        // mapboxgl.accessToken = 'pk.eyJ1IjoiaGVsbG93b3JsZDEyMzEyMyIsImEiOiJja2F0YWlsdHMweHhqMnBwMDA2OTA3c3gyIn0.7vPNtDnGlaKb51L8eykgkg';
+        // var map = new mapboxgl.Map({
+        //     container: 'map', // container id
+        //     style: 'mapbox://styles/mapbox/dark-v10',
+        //     center: [63.483, 17.028], // starting position
+        //     zoom: 3 // starting zoom
+        // });
+        
+        // map.on('click', function(e) {
+        //     document.getElementById('info').innerHTML =
+        //     // e.point is the x, y coordinates of the mousemove event relative
+        //     // to the top-left corner of the map
+        //     JSON.stringify(e.point) +
+        //     '<br />' +
+        //     // e.lngLat is the longitude, latitude geographical position of the event
+        //     JSON.stringify(e.lngLat.wrap());
+        // });
+    </script>
+</html>
