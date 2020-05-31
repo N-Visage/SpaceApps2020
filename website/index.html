@@ -33,7 +33,7 @@
                 Search By Area&nbsp;&nbsp;<span class="material-icons">filter_list</span>
             </p><form>
             <!-- <form> -->
-                <p>Click on the map to select a place.<br><br>You can even play around with the values to see interesting results!</p><br>
+                <p>Enter the climatic conditions of your area to check whether it is likely to be attacked or not.<p><br>
                 <span class="material-icons">opacity</span><input type="number" class="input" id="rainfall" placeholder="Precipitation (in mm)"><br><br>
                 <span class="material-icons">ac_unit</span><input type="number" class="input" id="temperature" placeholder="Temperaturei (in C)"><br><br>
                 <span class="material-icons">nature</span><input type="number" class="input" id="ndvi" min="-1" max="1"  placeholder="NDVI"><br><br><br>
@@ -846,8 +846,8 @@
 	  var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange=function() {
 	    if (this.readyState == 4 && this.status == 200) {
-	      if(this.responseText == "1.0") alert("Yeah, this is likely.");
-	      else alert("nope");
+	      if(this.responseText == "1.0") alert("These conditions are likely to receive an attack.");
+	      else alert("These conditions are unlikely to receive an attack.");
 	    }
 	  };
 	  xhttp.open("GET", "predict.php?rain=" + rainfall + "&temp=" + temperature + "&ndvi=" + ndvi, true);
