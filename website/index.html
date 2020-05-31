@@ -20,11 +20,12 @@
     <div class="page-body">
 
         <nav>
-            <a href="#" class="logo"><img src="static/img/logo.png"></a>
+            <a href="" class="logo"><img src="static/img/logo.png"></a>
             <a link href="#">ABOUT</a>
-            <a link href="#">HOW IT WORKS</a>
+            <a link href="https://covid19.spaceappschallenge.org/challenges/covid-challenges/food-thought/teams/n-visage/project
+">HOW IT WORKS</a>
             <a link href="#">TEAM</a>
-            <a link href="#">SOCIAL</a>
+            <a link href="../video/">DEMO</a>
         </nav>
 
         <div class="filter">
@@ -33,11 +34,11 @@
             </p><form>
             <!-- <form> -->
                 <p>Click on the map to select a place.<br><br>You can even play around with the values to see interesting results!</p><br>
-                <span class="material-icons">opacity</span><input type="number" class="input" placeholder="Precipitation"><br><br>
-                <span class="material-icons">ac_unit</span><input type="number" class="input" placeholder="Temperature"><br><br>
-                <span class="material-icons">nature</span><input type="number" class="input" min="-1" max="1"  placeholder="NDVI"><br><br><br>
-                <button type="submit" style="background-color: green;">Predict</button><br>
-                <button type="submit" style="background-color: red;">Clear</button><br>
+                <span class="material-icons">opacity</span><input type="number" class="input" id="rainfall" placeholder="Precipitation (in mm)"><br><br>
+                <span class="material-icons">ac_unit</span><input type="number" class="input" id="temperature" placeholder="Temperaturei (in C)"><br><br>
+                <span class="material-icons">nature</span><input type="number" class="input" id="ndvi" min="-1" max="1"  placeholder="NDVI"><br><br><br>
+                <button type="button" style="background-color: green;" onclick="prediction();">Predict</button><br>
+                <button type="button" style="background-color: red;">Clear</button><br>
             </form>
         </div>
 
@@ -800,7 +801,32 @@
                     .addTo(map);
         });
 
-        // map.on('click', function(e) {
+	//function showKolkata() {
+	//	var geojson = { 'type': 'FeatureCollection', 'features': [ { 'type': 'Feature', 'properties': { 'message': 'Foo', 'iconSize': [50, 35] }, 'geometry': { 'type': 'Point', 'coordinates': [88.3639, 22.5726] } } ] };
+
+	//	geojson.features.forEach(function(marker) {
+	//	    // create a DOM element for the marker
+	//	    var el = document.createElement('div');
+	//	    el.className = 'marker';
+	//	    el.style.backgroundImage = 'url(static/img/locust.png)';
+	//	    el.style.backgroundColor = "transparent";
+	//	    el.style.width = marker.properties.iconSize[0] + 'px';
+	//	    el.style.height = marker.properties.iconSize[1] + 'px';
+	//	    
+	//	    el.addEventListener('click', function() {
+	//		window.alert(marker.properties.message);
+	//	    });
+	//
+	//		alert("This area is likely to be attacked by locusts.");
+
+	//	    // add marker to map
+	//	    new mapboxgl.Marker(el)
+	//		    .setLngLat(marker.geometry.coordinates)
+	//		    .addTo(map);
+	//	});
+	//}
+
+        //map.on('click', function(e) {
         //     document.getElementById('info').innerHTML =
         //     // e.point is the x, y coordinates of the mousemove event relative
         //     // to the top-left corner of the map
@@ -808,6 +834,24 @@
         //     '<br />' +
         //     // e.lngLat is the longitude, latitude geographical position of the event
         //     JSON.stringify(e.lngLat.wrap());
+	//     alert(e.point)
         // });
+
+	function prediction() {
+
+	  var rainfall = document.getElementById("rainfall").value;
+	  var temperature = document.getElementById("temperature").value;
+	  var ndvi = document.getElementById("ndvi").value;
+
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange=function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	      if(this.responseText == "1.0") alert("Yeah, this is likely.");
+	      else alert("nope");
+	    }
+	  };
+	  xhttp.open("GET", "predict.php?rain=" + rainfall + "&temp=" + temperature + "&ndvi=" + ndvi, true);
+	  xhttp.send();
+	}
     </script>
 </html>
