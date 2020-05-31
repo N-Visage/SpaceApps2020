@@ -37,12 +37,12 @@ def Function(folder):
     return pd.DataFrame(np.vstack([Reshape(GetData(item)).dropna() for item in f]))
 
 
-temperature = Function(sys.argv[0])
-rainfall = Function(sys.argv[1])
-ndvi = Function(sys.argv[2])
+temperature = Function("data/data/temperature")
+rainfall = Function("data/data/rainfall")
+ndvi = Function("data/data/ndvi")
 
 X = Combine(ndvi, temperature, rainfall)
 X['year'] = X['year'].astype(int)
 X['period'] = X['period'].astype(int)
 
-X.to_csv(sys.argv[3])
+X.to_csv("data_build.csv")

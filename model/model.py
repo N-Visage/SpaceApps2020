@@ -7,18 +7,20 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 import joblib
 
-X = pd.read_csv(sys.argv[0])
+X = pd.read_csv("data_build.csv")
 
-cops = pd.read_csv(sys.argv[1])
+cops = pd.read_csv("control_operations.csv")
 month_period = {i + 1: (item, item + 1, item + 2) for i, item in enumerate(np.arange(1, 36, 3))}
 cops['LOCNAME'] = cops['LOCNAME'].str.lower()
 
 
 def GetY(place):
-    dates = [item.split()[0].split('-') for item in cops[cops['LOCNAME'].str.contains(place)]['STARTDATE']]
+    dates = [item.split()[0].split('/') for item in cops[cops['LOCNAME'].str.contains(place)]['STARTDATE']]
     dates = np.array(dates)
-    dates = list([(int(np.floor(int(item[0]) / 11)), int(item[1]), int(item[2])) for item in dates])
+    dates = list([(int(np.floor(int(item[0]) / 11)), int(item[2]), int(item[1])) for item in dates])
     index = []
+    print(dates[:3])
+    print(month_period)
     for item in dates:
         df = X[(X['location'] == place) & (X['year'] == item[-1]) & (X['period'] == month_period[item[1]][item[0]])]
         if len(df) != 0:
