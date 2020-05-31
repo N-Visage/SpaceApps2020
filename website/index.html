@@ -33,10 +33,10 @@
             </p><form>
             <!-- <form> -->
                 <p>Click on the map to select a place.<br><br>You can even play around with the values to see interesting results!</p><br>
-                <span class="material-icons">opacity</span><input type="number" class="input" placeholder="Precipitation (in mm)"><br><br>
-                <span class="material-icons">ac_unit</span><input type="number" class="input" placeholder="Temperaturei (in C)"><br><br>
-                <span class="material-icons">nature</span><input type="number" class="input" min="-1" max="1"  placeholder="NDVI"><br><br><br>
-                <button type="button" style="background-color: green;">Predict</button><br>
+                <span class="material-icons">opacity</span><input type="number" class="input" id="rainfall" placeholder="Precipitation (in mm)"><br><br>
+                <span class="material-icons">ac_unit</span><input type="number" class="input" id="temperature" placeholder="Temperaturei (in C)"><br><br>
+                <span class="material-icons">nature</span><input type="number" class="input" id="ndvi" min="-1" max="1"  placeholder="NDVI"><br><br><br>
+                <button type="button" style="background-color: green;" onclick="prediction();">Predict</button><br>
                 <button type="button" style="background-color: red;">Clear</button><br>
             </form>
         </div>
@@ -825,15 +825,32 @@
 	//	});
 	//}
 
-        map.on('click', function(e) {
-             document.getElementById('info').innerHTML =
-             // e.point is the x, y coordinates of the mousemove event relative
-             // to the top-left corner of the map
-             JSON.stringify(e.point) +
-             '<br />' +
-             // e.lngLat is the longitude, latitude geographical position of the event
-             JSON.stringify(e.lngLat.wrap());
-	     alert(e.point)
-         });
+        //map.on('click', function(e) {
+        //     document.getElementById('info').innerHTML =
+        //     // e.point is the x, y coordinates of the mousemove event relative
+        //     // to the top-left corner of the map
+        //     JSON.stringify(e.point) +
+        //     '<br />' +
+        //     // e.lngLat is the longitude, latitude geographical position of the event
+        //     JSON.stringify(e.lngLat.wrap());
+	//     alert(e.point)
+        // });
+
+	function prediction() {
+
+	  var rainfall = document.getElementById("rainfall").value;
+	  var temperature = document.getElementById("temperature").value;
+	  var ndvi = document.getElementById("ndvi").value;
+
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange=function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	      if(this.responseText == "1.0") alert("Yeah, this is likely.");
+	      else alert("nope");
+	    }
+	  };
+	  xhttp.open("GET", "predict.php?rain=" + rainfall + "&temp=" + temperature + "&ndvi=" + ndvi, true);
+	  xhttp.send();
+	}
     </script>
 </html>
